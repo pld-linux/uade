@@ -42,7 +42,7 @@ sprawdzenia, czy UADE dzia³a.
 
 %package -n xmms-input-uade
 Summary:	UADE plugin for XMMS
-Summary(pl):	Plugin dla XMMS wykorzystuj±cy UADE
+Summary(pl):	Plugin dla XMMS-a wykorzystuj±cy UADE
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}
 Requires:	xmms
@@ -55,9 +55,9 @@ effect and visual plugins there's also a UADE XMMS input plugin.
 
 %description -n xmms-input-uade -l pl
 Dla tych, którzy preferuj± GUI od aplikacji trybu tekstowego i ich
-prze³±czników, lub po prostu chc± s³uchaæ muzyki u¿ywaj±c XMMS,
+prze³±czników, lub po prostu chc± s³uchaæ muzyki u¿ywaj±c XMMS-a,
 korzystaj±c z jego cech, jak playlisty, ró¿ne wyj¶cia, efekty i
-pluginy wizualizacyjne, jest plugin dla XMMS korzystaj±cy z UADE.
+pluginy wizualizacyjne, jest plugin dla XMMS-a korzystaj±cy z UADE.
 
 %prep
 %setup -q
