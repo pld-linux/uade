@@ -7,6 +7,7 @@ Release:	1.%{_pre}
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://www.ee.tut.fi/~heikki/uade/pre/%{name}-%{version}-%{_pre}.tar.bz2
+# Source0-md5:	33c9d566d5e31e967b90952edf6a11e2
 URL:		http://www.ee.tut.fi/~heikki/uade.html
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
