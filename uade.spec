@@ -1,4 +1,4 @@
-%define		_pre	pre2
+%define		_pre	pre5
 Summary:	Replayer for old amiga music file formats
 Summary(pl):	Odtwarzacz starych amigowych plików muzycznych
 Name:		uade
