@@ -2,7 +2,7 @@ Summary:	Replayer for old amiga music file formats
 Summary(pl):	Odtwarzacz starych amigowych plików muzycznych
 Name:		uade
 Version:	0.71
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://www.ee.tut.fi/~heikki/uade/%{name}-%{version}.tar.bz2
@@ -76,17 +76,12 @@ cat Makefile.new | sed 's@BINDIR = @&$(DESTDIR)@;s@DOCDIR = @&$(DESTDIR)@' > Mak
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf ChangeLog.txt
-find uade-docs -type f | xargs gzip -9nf
-
-gzip -9nf cust/* dlm/* fc/*
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz uade-docs/*.gz
+%doc ChangeLog.txt cust/* dlm/* fc/*
 %doc uade-docs/decrunch uade-docs/players
 %attr(755,root,root) %{_bindir}/uade
 %{_datadir}
