@@ -1,0 +1,6 @@
+- renamed to uade.spec
+- separated xmms plugin to subpackage
+- release 2
+STBR
+
+moved from xmms-input-uade.spec
