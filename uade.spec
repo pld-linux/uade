@@ -1,18 +1,18 @@
+%define		_pre	pre5
 Summary:	Replayer for old amiga music file formats
 Summary(pl):	Odtwarzacz starych amigowych plików muzycznych
 Name:		uade
-Version:	0.71
-Release:	2
+Version:	0.73
+Release:	0.%{_pre}.1
 License:	GPL
 Group:		Applications/Sound
-Source0:	http://www.ee.tut.fi/~heikki/uade/%{name}-%{version}.tar.bz2
+Source0:	http://www.ee.tut.fi/~heikki/uade/%{name}-%{version}-%{_pre}.tar.bz2
 URL:		http://www.ee.tut.fi/~heikki/uade.html
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
 BuildRequires:	xmms-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr
 %define		_libdir		%(xmms-config --input-plugin-dir)
 %define		_datadir	%{_prefix}/share/uade
 
@@ -58,19 +58,29 @@ korzystaj±c z jego cech, jak playlisty, ró¿ne wyj¶cia, efekty i
 pluginy wizualizacyjne, jest plugin dla XMMS korzystaj±cy z UADE.
 
 %prep
-%setup -q -n uade-%{version}
+%setup -q -n %{name}-%{version}-%{_pre}
 
 %build
-%configure --prefix=%{_prefix}
-cd plugindir
-cat Makefile | sed 's@PLUGINDIR = @&$(DESTDIR)@' > Makefile.new
-mv -f Makefile.new Makefile
-cd ..
-cat Makefile | sed 's@SYSDATADIR = @&$(DESTDIR)@' > Makefile.new
-cat Makefile.new | sed 's@BINDIR = @&$(DESTDIR)@;s@DOCDIR = @&$(DESTDIR)@' > Makefile
+./configure \
+	--prefix=%{_prefix} \
+	--package-prefix=$RPM_BUILD_ROOT \
+	--input-plugin-dir=%{_libdir} \
+	--with-sdl
+
+#%%configure --prefix=%{_prefix}
+#cd plugindir
+#cat Makefile | sed 's@PLUGINDIR = @&$(DESTDIR)@' > Makefile.new
+#mv -f Makefile.new Makefile
+#cd ..
+#cat Makefile | sed 's@SYSDATADIR = @&$(DESTDIR)@' > Makefile.new
+#cat Makefile.new | sed 's@BINDIR = @&$(DESTDIR)@;s@DOCDIR = @&$(DESTDIR)@' > Makefile
 
 %{__make} \
-	CC=%{__cc}
+	CC="%{__cc}"
+#	LDFLAGS="%{rpmldflags}" \
+#	CFLAGS="%{rpmcflags} -DGCCCONSTFUNC=\"__attribute__((const))\" -DREGPARAM= -D__inline__=inline -DVERSION=\\\"%{version}\\\"" \
+#	SDLLIBS="%(sdl-config --libs)" \
+#	SDLLFLAGS="%(sdl-config --cflags)"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -81,14 +91,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog.txt cust/* dlm/* fc/*
+%doc ChangeLog.txt BUGS FIXED
 %doc uade-docs/decrunch uade-docs/players
+%doc uade-docs/faq.html uade-docs/*.txt
 %attr(755,root,root) %{_bindir}/uade
 %{_datadir}
 
 %files examples
 %defattr(644,root,root,755)
-%doc cust/* dlm/* fc/*
+%doc songs/*
 
 %files -n xmms-input-uade
 %defattr(644,root,root,755)
