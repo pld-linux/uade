@@ -67,20 +67,9 @@ pluginy wizualizacyjne, jest plugin dla XMMS korzystaj±cy z UADE.
 	--input-plugin-dir=%{_libdir} \
 	--with-sdl
 
-#%%configure --prefix=%{_prefix}
-#cd plugindir
-#cat Makefile | sed 's@PLUGINDIR = @&$(DESTDIR)@' > Makefile.new
-#mv -f Makefile.new Makefile
-#cd ..
-#cat Makefile | sed 's@SYSDATADIR = @&$(DESTDIR)@' > Makefile.new
-#cat Makefile.new | sed 's@BINDIR = @&$(DESTDIR)@;s@DOCDIR = @&$(DESTDIR)@' > Makefile
-
 %{__make} \
-	CC="%{__cc}"
-#	LDFLAGS="%{rpmldflags}" \
-#	CFLAGS="%{rpmcflags} -DGCCCONSTFUNC=\"__attribute__((const))\" -DREGPARAM= -D__inline__=inline -DVERSION=\\\"%{version}\\\"" \
-#	SDLLIBS="%(sdl-config --libs)" \
-#	SDLLFLAGS="%(sdl-config --cflags)"
+	CC="%{__cc}" \
+	LIBTOOL="libtool --tag=dupa"
 
 %install
 rm -rf $RPM_BUILD_ROOT
