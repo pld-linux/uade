@@ -73,7 +73,6 @@ pluginy wizualizacyjne, jest plugin dla XMMS korzystaj±cy z UADE.
 %{__make} \
 	CC="%{__cc}" \
 	ARCHFLAGS="%{rpmcflags}"
-#	LIBTOOL="libtool --tag=dupa"
 
 %install
 rm -rf $RPM_BUILD_ROOT
