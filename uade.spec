@@ -42,7 +42,7 @@ sprawdzenia, czy UADE dzia³a.
 %package -n xmms-input-uade
 Summary:	UADE plugin for XMMS
 Summary(pl):	Plugin dla XMMS wykorzystuj±cy UADE
-Group:		X11/Applications/Multimedia
+Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}
 
 %description -n xmms-input-uade
