@@ -3,7 +3,7 @@ Summary:	Replayer for old amiga music file formats
 Summary(pl):	Odtwarzacz starych amigowych plików muzycznych
 Name:		uade
 Version:	0.80
-Release:	1.%{_pre}
+Release:	1.%{_pre}.1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://www.ee.tut.fi/~heikki/uade/pre/%{name}-%{version}-%{_pre}.tar.bz2
@@ -12,9 +12,10 @@ URL:		http://www.ee.tut.fi/~heikki/uade.html
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
 BuildRequires:	xmms-devel
+BuildRequires:	rpmbuild(macros) >= 1.125
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_libdir		%(xmms-config --input-plugin-dir)
+%define		_libdir		%{xmms_input_plugindir}
 %define		_datadir	%{_prefix}/share/uade
 
 %description
@@ -45,6 +46,7 @@ Summary:	UADE plugin for XMMS
 Summary(pl):	Plugin dla XMMS wykorzystuj±cy UADE
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}
+Requires:	xmms
 
 %description -n xmms-input-uade
 For people that prefer a GUI rather than plain console apps and their
@@ -74,7 +76,8 @@ pluginy wizualizacyjne, jest plugin dla XMMS korzystaj±cy z UADE.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
