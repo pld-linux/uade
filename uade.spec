@@ -1,13 +1,12 @@
-%define		_pre	pre7
 Summary:	Replayer for old amiga music file formats
 Summary(pl):	Odtwarzacz starych amigowych plików muzycznych
 Name:		uade
 Version:	0.80
-Release:	1.%{_pre}.1
+Release:	2
 License:	GPL
 Group:		Applications/Sound
-Source0:	http://www.ee.tut.fi/~heikki/uade/pre/%{name}-%{version}-%{_pre}.tar.bz2
-# Source0-md5:	5ce506d1ae3e2df4889ad291ceb9f957
+Source0:	http://www.ee.tut.fi/~heikki/uade/%{name}-%{version}.tar.bz2
+# Source0-md5:	025b75d762f37d9e187f70d6b56554af
 URL:		http://www.ee.tut.fi/~heikki/uade.html
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
@@ -61,7 +60,7 @@ korzystaj±c z jego cech, jak playlisty, ró¿ne wyj¶cia, efekty i
 pluginy wizualizacyjne, jest plugin dla XMMS korzystaj±cy z UADE.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_pre}
+%setup -q
 
 %build
 ./configure \
