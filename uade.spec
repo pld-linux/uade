@@ -10,8 +10,8 @@ Source0:	http://uade.ton.tut.fi/uade/%{name}-%{version}.tar.bz2
 URL:		http://uade.ton.tut.fi/
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
-BuildRequires:	xmms-devel
 BuildRequires:	rpmbuild(macros) >= 1.125
+BuildRequires:	xmms-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libdir		%{xmms_input_plugindir}
@@ -42,9 +42,9 @@ sprawdzenia, czy UADE dzia³a.
 
 %package -n xmms-input-uade
 Summary:	UADE plugin for XMMS
-Summary(pl):	Plugin dla XMMS-a wykorzystuj±cy UADE
+Summary(pl):	Wtyczka dla XMMS-a wykorzystuj±ca UADE
 Group:		X11/Applications/Sound
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	xmms
 
 %description -n xmms-input-uade
@@ -56,8 +56,8 @@ effect and visual plugins there's also a UADE XMMS input plugin.
 %description -n xmms-input-uade -l pl
 Dla tych, którzy preferuj± GUI od aplikacji trybu tekstowego i ich
 prze³±czników, lub po prostu chc± s³uchaæ muzyki u¿ywaj±c XMMS-a,
-korzystaj±c z jego cech, jak playlisty, ró¿ne wyj¶cia, efekty i
-pluginy wizualizacyjne, jest plugin dla XMMS-a korzystaj±cy z UADE.
+korzystaj±c z jego cech, takich jak playlisty, ró¿ne wyj¶cia, efekty i
+wtyczki wizualizacyjne, jest wtyczka dla XMMS-a korzystaj±ca z UADE.
 
 %prep
 %setup -q
