@@ -1,12 +1,12 @@
-%define		_pre	pre5
+%define		_pre	pre2
 Summary:	Replayer for old amiga music file formats
 Summary(pl):	Odtwarzacz starych amigowych plików muzycznych
 Name:		uade
-Version:	0.73
-Release:	0.%{_pre}.1
+Version:	0.80
+Release:	1.%{_pre}
 License:	GPL
 Group:		Applications/Sound
-Source0:	http://www.ee.tut.fi/~heikki/uade/%{name}-%{version}-%{_pre}.tar.bz2
+Source0:	http://www.ee.tut.fi/~heikki/uade/pre/%{name}-%{version}-%{_pre}.tar.bz2
 URL:		http://www.ee.tut.fi/~heikki/uade.html
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
