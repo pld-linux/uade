@@ -1,14 +1,15 @@
 Summary:	Replayer for old amiga music file formats
 Summary(pl):	Odtwarzacz starych amigowych plików muzycznych
 Name:		uade
-Version:	0.91
+Version:	1.00
 Release:	1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://uade.ton.tut.fi/uade/%{name}-%{version}.tar.bz2
-# Source0-md5:	3b7fa0899e3456e0d37c50048685881e
+# Source0-md5:	6179e098cb9a79be1fa4d886a0fd35e1
 URL:		http://uade.ton.tut.fi/
 BuildRequires:	gtk+-devel
+BuildRequires:	libao-devel
 BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.125
 BuildRequires:	xmms-devel
@@ -67,7 +68,10 @@ wtyczki wizualizacyjne, jest wtyczka dla XMMS-a korzystaj±ca z UADE.
 	--prefix=%{_prefix} \
 	--package-prefix=$RPM_BUILD_ROOT \
 	--xmms-plugin-dir=%{_libdir} \
-	--with-sdl \
+	--with-ao \
+	--without-alsa \
+	--without-oss \
+	--without-sdl \
 	--without-bmp
 
 %{__make} \
