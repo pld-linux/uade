@@ -38,7 +38,7 @@ Group:		Applications/Sound
 Some sample amiga tunes you can use to test if UADE works.
 
 %description examples -l pl
-Kilka przyk³adowych amigowych melodii, które mo¿esz wykorzystaæ do
+Kilka przyk³adowych amigowych melodii, które mo¿na wykorzystaæ do
 sprawdzenia, czy UADE dzia³a.
 
 %package -n xmms-input-uade
