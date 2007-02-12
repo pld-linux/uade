@@ -1,5 +1,5 @@
 Summary:	Replayer for old amiga music file formats
-Summary(pl):	Odtwarzacz starych amigowych plików muzycznych
+Summary(pl.UTF-8):   Odtwarzacz starych amigowych plikÃ³w muzycznych
 Name:		uade
 Version:	1.03
 Release:	1
@@ -24,26 +24,26 @@ emulation of the AMIGA Hardware and a cloned m68k-assembler Amiga
 delitracker API to be able to replay those tunes again on platforms
 other than the original AMIGA.
 
-%description -l pl
-UADE jest odtwarzaczem starych amigowych formatów plików muzycznych.
-U¿ywa emulacji sprzêtu z UAE i sklonowanego API delitrackera, by móc
-odtworzyæ ponownie te melodie na platformach innych ni¿ Amiga.
+%description -l pl.UTF-8
+UADE jest odtwarzaczem starych amigowych formatÃ³w plikÃ³w muzycznych.
+UÅ¼ywa emulacji sprzÄ™tu z UAE i sklonowanego API delitrackera, by mÃ³c
+odtworzyÄ‡ ponownie te melodie na platformach innych niÅ¼ Amiga.
 
 %package examples
 Summary:	Sample amiga tunes
-Summary(pl):	Przyk³adowe melodie
+Summary(pl.UTF-8):   PrzykÅ‚adowe melodie
 Group:		Applications/Sound
 
 %description examples
 Some sample amiga tunes you can use to test if UADE works.
 
-%description examples -l pl
-Kilka przyk³adowych amigowych melodii, które mo¿na wykorzystaæ do
-sprawdzenia, czy UADE dzia³a.
+%description examples -l pl.UTF-8
+Kilka przykÅ‚adowych amigowych melodii, ktÃ³re moÅ¼na wykorzystaÄ‡ do
+sprawdzenia, czy UADE dziaÅ‚a.
 
 %package -n xmms-input-uade
 Summary:	UADE plugin for XMMS
-Summary(pl):	Wtyczka dla XMMS-a wykorzystuj±ca UADE
+Summary(pl.UTF-8):   Wtyczka dla XMMS-a wykorzystujÄ…ca UADE
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Requires:	xmms
@@ -54,11 +54,11 @@ switches or those who just want to listen to their music with XMMS and
 take advantage of it's features like playlists, different output,
 effect and visual plugins there's also a UADE XMMS input plugin.
 
-%description -n xmms-input-uade -l pl
-Dla tych, którzy preferuj± GUI od aplikacji trybu tekstowego i ich
-prze³±czników, lub po prostu chc± s³uchaæ muzyki u¿ywaj±c XMMS-a,
-korzystaj±c z jego cech, takich jak playlisty, ró¿ne wyj¶cia, efekty i
-wtyczki wizualizacyjne, jest wtyczka dla XMMS-a korzystaj±ca z UADE.
+%description -n xmms-input-uade -l pl.UTF-8
+Dla tych, ktÃ³rzy preferujÄ… GUI od aplikacji trybu tekstowego i ich
+przeÅ‚Ä…cznikÃ³w, lub po prostu chcÄ… sÅ‚uchaÄ‡ muzyki uÅ¼ywajÄ…c XMMS-a,
+korzystajÄ…c z jego cech, takich jak playlisty, rÃ³Å¼ne wyjÅ›cia, efekty i
+wtyczki wizualizacyjne, jest wtyczka dla XMMS-a korzystajÄ…ca z UADE.
 
 %prep
 %setup -q
