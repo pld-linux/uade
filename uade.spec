@@ -1,5 +1,5 @@
 Summary:	Replayer for old amiga music file formats
-Summary(pl.UTF-8):   Odtwarzacz starych amigowych plików muzycznych
+Summary(pl.UTF-8):	Odtwarzacz starych amigowych plików muzycznych
 Name:		uade
 Version:	1.03
 Release:	1
@@ -31,7 +31,7 @@ odtworzyć ponownie te melodie na platformach innych niż Amiga.
 
 %package examples
 Summary:	Sample amiga tunes
-Summary(pl.UTF-8):   Przykładowe melodie
+Summary(pl.UTF-8):	Przykładowe melodie
 Group:		Applications/Sound
 
 %description examples
@@ -43,7 +43,7 @@ sprawdzenia, czy UADE działa.
 
 %package -n xmms-input-uade
 Summary:	UADE plugin for XMMS
-Summary(pl.UTF-8):   Wtyczka dla XMMS-a wykorzystująca UADE
+Summary(pl.UTF-8):	Wtyczka dla XMMS-a wykorzystująca UADE
 Group:		X11/Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Requires:	xmms
