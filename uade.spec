@@ -1,8 +1,12 @@
+#
+# Conditional build:
+%bcond_with	xmms		# XMMS plugin
+#
 Summary:	Replayer for old amiga music file formats
 Summary(pl.UTF-8):	Odtwarzacz starych amigowych plików muzycznych
 Name:		uade
 Version:	1.03
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://zakalwe.virtuaalipalvelin.net/uade/uade/%{name}-%{version}.tar.bz2
@@ -12,11 +16,8 @@ BuildRequires:	gtk+-devel
 BuildRequires:	libao-devel
 BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.125
-BuildRequires:	xmms-devel
+%{?with_xmms:BuildRequires:	xmms-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_libdir		%{xmms_input_plugindir}
-%define		_datadir	%{_prefix}/share/uade
 
 %description
 UADE is a replayer for old amiga music file formats. It uses an UAE
@@ -67,7 +68,12 @@ wtyczki wizualizacyjne, jest wtyczka dla XMMS-a korzystająca z UADE.
 ./configure \
 	--prefix=%{_prefix} \
 	--package-prefix=$RPM_BUILD_ROOT \
-	--xmms-plugin-dir=%{_libdir} \
+%if %{with xmms}
+	--with-xmms \
+	--xmms-plugin-dir=%{xmms_input_plugindir} \
+%else
+	--without-xmms \
+%endif
 	--with-ao \
 	--without-alsa \
 	--without-oss \
@@ -83,6 +89,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -90,15 +98,17 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog.txt BUGS FIXED
 %doc uade-docs/decrunch uade-docs/players
-%doc uade-docs/faq.html uade-docs/*.txt
+%doc uade-docs/faq.html uade-docs/*.txt uade-docs/*.png
 %attr(755,root,root) %{_bindir}/uade
-%{_datadir}
+%{_datadir}/uade
 %{_mandir}/man1/*
 
 %files examples
 %defattr(644,root,root,755)
 %doc songs/*
 
+%if %{with xmms}
 %files -n xmms-input-uade
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/*.so
+%attr(755,root,root) %{xmms_input_plugindir}/*.so
+%endif
